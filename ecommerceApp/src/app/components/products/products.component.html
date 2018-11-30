@@ -1,0 +1,20 @@
+<div class="products">
+    <div *ngFor="let product of products" class="product">
+        <a class="product" routerLink="product/{{ product._id }}">
+            <img src="{{ product.imageUrl }}" height="200"/>
+            <p class="product-name">{{ product.name }}</p>
+        </a>
+
+        <!--Validation issue most prob happening here at the data-item-url-->
+        <button class="snipcart-add-item"
+            attr.data-item-name="{{ product.name }}"
+            attr.data-item-id="{{ product._id }}"
+            attr.data-item-image="{{ product.imageUrl }}"
+            attr.data-item-price="{{ product.price }}"
+            attr.data-item-description="{{ product.description }}"
+            data-item-url='http://localhost:3333/desk/product;3fdbc352-fbdf-4beb-accb-b6d7f49e422c/sanity-parser'>
+            Buy it for {{ product.price }}$
+        </button>
+        
+    </div>
+</div>
